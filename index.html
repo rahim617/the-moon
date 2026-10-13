@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إلى ليليا ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff8f0;
+    font-family:"Cairo",sans-serif;
+
+    background:
+        radial-gradient(circle at 50% 10%,rgba(180,20,55,.35),transparent 32%),
+        linear-gradient(145deg,#030103,#28050d,#080205);
+}
+
+/* القمر */
+
+.moon{
+    position:fixed;
+    top:5vh;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(300px,65vw);
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,
+        #fff,
+        #e7e2dc 55%,
+        #99938e);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.8),
+        0 0 100px rgba(255,210,160,.3);
+
+    opacity:.8;
+}
+
+#stars,
+#hearts{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+#stars{
+    z-index:1;
+}
+
+#hearts{
+    z-index:2;
+    overflow:hidden;
+}
+
+.heart-fall{
+    position:absolute;
+    top:-30px;
+    color:#e31d48;
+    animation:fall linear forwards;
+    filter:drop-shadow(0 0 7px #e31d48);
+}
+
+@keyframes fall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+main{
+    position:relative;
+    z-index:5;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:60px 15px;
+}
+
+.container{
+    width:min(900px,100%);
+    text-align:center;
+}
+
+.small-title{
+    color:#f7df96;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+h1{
+    direction:ltr;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(55px,10vw,100px);
+
+    background:
+        linear-gradient(
+            120deg,
+            #fff5cf,
+            #d4af37,
+            #fff4c2
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.heart{
+    color:#e31d48;
+}
+
+.intro{
+    max-width:650px;
+    margin:25px auto;
+
+    line-height:2;
+
+    color:#eee0df;
+}
+
+.open-button{
+    margin-top:30px;
+
+    padding:16px 35px;
+
+    border:none;
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-family:"Cairo",sans-serif;
+    font-size:17px;
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8f1027,
+            #d21e45
+        );
+
+    border:1px solid #d4af37;
+
+    box-shadow:
+        0 0 30px rgba(210,30,69,.45);
+
+    transition:.3s;
+}
+
+.open-button:hover{
+    transform:scale(1.06);
+}
+
+.open-button:active{
+    transform:scale(.96);
+}
+
+/* المفاجأة */
+
+#surprise{
+    display:none;
+    margin-top:60px;
+}
+
+#surprise.show{
+    display:block;
+    animation:showSurprise 1.5s ease forwards;
+}
+
+@keyframes showSurprise{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.surprise-title{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(38px,7vw,70px);
+
+    color:#f7df96;
+
+    margin-bottom:30px;
+}
+
+.card{
+    padding:clamp(25px,5vw,60px);
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(85,8,27,.8),
+            rgba(10,2,7,.9)
+        );
+
+    border:1px solid rgba(212,175,55,.4);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.5);
+
+    backdrop-filter:blur(15px);
+}
+
+.arabic{
+    font-family:"Amiri",serif;
+
+    font-size:21px;
+
+    line-height:2.4;
+
+    text-align:right;
+}
+
+.arabic p{
+    margin-bottom:25px;
+}
+
+.divider{
+    width:100px;
+    height:1px;
+
+    margin:45px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
+}
+
+.poem-title{
+    color:#f7df96;
+
+    font-family:"Amiri",serif;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+}
+
+.poem{
+    font-family:"Amiri",serif;
+
+    font-size:21px;
+
+    line-height:2.4;
+}
+
+.poem p{
+    margin-bottom:22px;
+}
+
+.english{
+    direction:ltr;
+
+    text-align:left;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:18px;
+
+    line-height:2.1;
+}
+
+.english p{
+    margin-bottom:23px;
+}
+
+.signature{
+    margin-top:45px;
+
+    font-family:"Amiri",serif;
+
+    font-size:28px;
+
+    line-height:1.9;
+
+    color:#f7df96;
+}
+
+.music{
+    position:fixed;
+
+    bottom:20px;
+    left:20px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    border:1px solid #d4af37;
+
+    background:#23050d;
+
+    color:#f7df96;
+
+    cursor:pointer;
+
+    z-index:100;
+
+    font-size:20px;
+}
+
+footer{
+    position:relative;
+    z-index:5;
+
+    text-align:center;
+
+    color:#ffffff55;
+
+    padding:20px 20px 40px;
+}
+
+@media(max-width:600px){
+
+    .arabic,
+    .poem{
+        font-size:18px;
+    }
+
+    .english{
+        font-size:16px;
+    }
+
+    .card{
+        border-radius:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<canvas id="stars"></canvas>
+
+<div id="hearts"></div>
+
+
+<main>
+
+<div class="container">
+
+    <div class="small-title">
+        A SPECIAL SURPRISE
+    </div>
+
+    <h1>
+        Happy Birthday
+        <span class="heart">♥</span>
+        <br>
+        Lilia
+    </h1>
+
+    <p class="intro">
+        ليليا... ❤️
+        <br>
+        هذه مجرد نسخة تجريبية، والمفاجأة جاهزة الآن.
+        اضغطي على الزر لتكتشفي الرسالة.
+    </p>
+
+    <button
+        class="open-button"
+        onclick="openSurprise()"
+    >
+        🎁 افتحي المفاجأة الآن
+    </button>
+
+
+    <section id="surprise">
+
+        <h2 class="surprise-title">
+            إلى ليليا ❤️
+        </h2>
+
+        <div class="card">
+
+            <div class="arabic">
+
+                <p>
+                    إلى ليليا، إلى أجمل شخص... ❤️
+                </p>
+
+                <p>
+                    اليوم حبيت نكتبلك كلام من القلب، بعيدًا عن
+                    الكلمات العادية، لأن بعض الأشخاص يستحقون
+                    أكثر من مجرد "عيد ميلاد سعيد".
+                </p>
+
+                <p>
+                    ليليا، أتمنى أن تكون كل سنة جديدة من عمرك
+                    بداية لحكاية أجمل، وأن تحمل لك الأيام القادمة
+                    الكثير من الأشياء التي تجعل قلبك سعيدًا.
+                </p>
+
+                <p>
+                    أتمنى أن تضحكي كثيرًا، وأن تبقى ابتسامتك
+                    موجودة حتى في الأيام التي لا تسير كما تريدين.
+                    وأتمنى أن تجدي دائمًا سببًا صغيرًا يجعلك
+                    تؤمنين بأن القادم أجمل.
+                </p>
+
+                <p>
+                    أتمنى أن تحققي كل حلم خبأته في قلبك،
+                    وكل أمنية دعوتِ بها في لحظة لم يسمعها أحد.
+                    أتمنى أن يأتي اليوم الذي تنظرين فيه إلى
+                    نفسك وتقولين: "كل التعب كان يستحق."
+                </p>
+
+                <p>
+                    وإذا جاءت أيام صعبة، لا تنسي أنك أقوى مما
+                    تتخيلين. لا يوجد طريق جميل طوال الوقت،
+                    لكن حتى الطرق الصعبة تقودنا أحيانًا إلى
+                    أجمل الأماكن.
+                </p>
+
+                <p>
+                    أتمنى أن تكون حياتك مليئة بالأشخاص الذين
+                    يحبون الخير لك، والذين يفرحون لرؤيتك سعيدة،
+                    والذين يجعلون الأيام العادية ذكريات جميلة.
+                </p>
+
+                <p>
+                    أتمنى لك نجاحًا كبيرًا، وراحة لا تنتهي،
+                    وقلبًا مطمئنًا، وأيامًا مليئة بالضحكات
+                    والمفاجآت الجميلة.
+                </p>
+
+                <p>
+                    ولا تتوقفي أبدًا عن الحلم.
+                    ربما أجمل شيء تنتظرينه لم يصل بعد،
+                    وربما أفضل أيام حياتك ما زالت أمامك.
+                </p>
+
+                <p>
+                    عيد ميلاد سعيد يا ليليا. 🎂❤️
+                    <br>
+                    كل عام وأنتِ بخير،
+                    وكل عام وأنتِ أقرب لأحلامك،
+                    وكل عام والفرح يختار طريقه إليك.
+                </p>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <div class="poem-title">
+                ✦ قصيدة لليليا ✦
+            </div>
+
+
+            <div class="poem">
+
+                <p>
+                    يا ليليا يا وردةً في العمرِ قد نَبَتَتْ<br>
+                    ويا حكايةَ قلبٍ بالصفا كُتِبَتْ
+                </p>
+
+                <p>
+                    في يوم ميلادكِ الدنيا لها فرحٌ<br>
+                    وكأن نجمةَ ليلٍ في السما ظهرتْ
+                </p>
+
+                <p>
+                    يا بسمةً لو مرّت الأيامُ عابسةً<br>
+                    جاءت فصارَتْ ليالي الحزنِ قد فرحتْ
+                </p>
+
+                <p>
+                    أتمنى لكِ الأيامَ مشرقةً<br>
+                    وأن يكونَ طريقُ العمرِ قد زَهَرَتْ
+                </p>
+
+                <p>
+                    وأن تري حلمَكِ يومًا حقيقةً<br>
+                    وأن تري كل أبوابِ النجاحِ فُتِحَتْ
+                </p>
+
+                <p>
+                    وإن تعبتِ من الدنيا ومن تعبٍ<br>
+                    تذكري أن بعد العسرِ قد فرجتْ
+                </p>
+
+                <p>
+                    فكوني كما أنتِ، جميلةَ روحٍ<br>
+                    فالجمالُ في القلبِ قبل الوجهِ قد سكنتْ
+                </p>
+
+                <p>
+                    وكل عامٍ وأنتِ الخيرُ في فرحٍ<br>
+                    وكل عامٍ وأنتِ للفرحةِ قد وُجِدَتْ
+                </p>
+
+                <p>
+                    يا ليليا، يا أجملَ أمنيةٍ<br>
+                    أتمنى لكِ حياةً أجملَ مما تمنيتِ ❤️
+                </p>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <div class="english">
+
+                <p>
+                    Dear Lilia,
+                </p>
+
+                <p>
+                    Today is a celebration of you,
+                    your beautiful journey, your dreams,
+                    and everything that makes you special.
+                </p>
+
+                <p>
+                    May this new chapter bring you endless happiness,
+                    peaceful moments, genuine smiles, meaningful
+                    friendships, and beautiful memories.
+                </p>
+
+                <p>
+                    May every dream in your heart find its way
+                    toward reality, and may every difficult moment
+                    become a lesson that makes you stronger.
+                </p>
+
+                <p>
+                    Never stop dreaming.
+                    Never stop believing in yourself.
+                    And never forget how special you are.
+                </p>
+
+                <p>
+                    Happy Birthday, Lilia. ❤️
+                </p>
+
+            </div>
+
+
+            <div class="signature">
+
+                من رحيم
+                <br>
+                لأجمل شخص...
+                <br>
+                ليليا ❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</main>
+
+
+<footer>
+    Made with ❤️ especially for Lilia
+</footer>
+
+
+<button
+    class="music"
+    id="musicButton"
+>
+    🔇
+</button>
+
+<audio
+    id="musicAudio"
+    loop
+>
+    <source
+        src="assets/birthday-music.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<script>
+
+/* فتح المفاجأة فورًا */
+
+function openSurprise(){
+
+    const surprise =
+        document.getElementById("surprise");
+
+    surprise.classList.add("show");
+
+    document
+        .querySelector(".open-button")
+        .style.display = "none";
+
+    document
+        .querySelector(".intro")
+        .style.display = "none";
+
+    playMusic();
+
+    setTimeout(()=>{
+
+        surprise.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },400);
+}
+
+
+/* الموسيقى */
+
+const audio =
+    document.getElementById("musicAudio");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+let playing = false;
+
+async function playMusic(){
+
+    try{
+
+        await audio.play();
+
+        playing = true;
+
+        musicButton.textContent = "🔊";
+
+    }catch(e){
+
+        musicButton.textContent = "🔇";
+
+    }
+}
+
+musicButton.onclick = ()=>{
+
+    if(playing){
+
+        audio.pause();
+
+        playing = false;
+
+        musicButton.textContent = "🔇";
+
+    }else{
+
+        playMusic();
+
+    }
+
+};
+
+
+/* النجوم */
+
+const canvas =
+    document.getElementById("stars");
+
+const ctx =
+    canvas.getContext("2d");
+
+let stars=[];
+
+function resize(){
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+}
+
+function createStars(){
+
+    stars=[];
+
+    for(let i=0;i<100;i++){
+
+        stars.push({
+
+            x:Math.random()*window.innerWidth,
+
+            y:Math.random()*window.innerHeight,
+
+            r:Math.random()*1.5+.3,
+
+            a:Math.random()
+
+        });
+
+    }
+
+}
+
+function drawStars(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    stars.forEach(s=>{
+
+        s.a +=
+            (Math.random()-.5)*.04;
+
+        s.a =
+            Math.max(.15,Math.min(1,s.a));
+
+        ctx.beginPath();
+
+        ctx.arc(
+            s.x,
+            s.y,
+            s.r,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle=
+            `rgba(255,225,170,${s.a})`;
+
+        ctx.fill();
+
+    });
+
+    requestAnimationFrame(drawStars);
+
+}
+
+resize();
+createStars();
+drawStars();
+
+window.onresize=()=>{
+    resize();
+    createStars();
+};
+
+
+/* القلوب المتساقطة */
+
+const hearts =
+    document.getElementById("hearts");
+
+function createHeart(){
+
+    const h =
+        document.createElement("div");
+
+    h.className="heart-fall";
+
+    h.textContent =
+        Math.random()>.5 ? "♥" : "✦";
+
+    h.style.left =
+        Math.random()*100+"vw";
+
+    h.style.fontSize =
+        Math.random()*14+10+"px";
+
+    h.style.animationDuration =
+        Math.random()*5+5+"s";
+
+    hearts.appendChild(h);
+
+    setTimeout(()=>{
+        h.remove();
+    },11000);
+
+}
+
+setInterval(
+    createHeart,
+    450
+);
+
+</script>
+
+</body>
+</html>
